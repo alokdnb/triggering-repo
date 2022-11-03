@@ -8,6 +8,6 @@ jobs:
         uses: peter-evans/repository-dispatch@v2
         with:
           token: ${{secrets.GH_PAT}}
-          repository: aliksai-bh/uptime-monitoring
+          repository: AILAB-bh/monitoring-automation
           event-type: triggering-event
           client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
