@@ -9,5 +9,5 @@ jobs:
         with:
           token: ${{secrets.GH_PAT}}
           repository: aliksai-bh/automation
-          event-type: triggering-event
+          event-type: triggeringevent
           client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
