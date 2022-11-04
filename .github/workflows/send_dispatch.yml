@@ -7,7 +7,7 @@ jobs:
       - name: Repository-dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{secrets.GH_PAT}}
-          repository: AILAB-bh/monitoring-automation
+          token: ${{secrets.GITHUB_TOKEN}}
+          repository: aliksai-bh/uptime-monitoring
           event-type: triggering-event
           client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
