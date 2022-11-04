@@ -7,7 +7,7 @@ jobs:
       - name: Repository-dispatch
         uses: peter-evans/repository-dispatch@v2
         with:
-          token: ${{secrets.GITHUB_TOKEN}}
+          token: ${{secrets.GH_PAT}}
           repository: aliksai-bh/automation
           event-type: triggering-event
           client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
