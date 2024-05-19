@@ -1,9 +1,8 @@
 # trigger-repob-workflow.yml
 name: 'Trigger Repo B GitHub workflow'
 on:
-  push:
-    branches:
-      - main
+  pull_request:
+    branches: [ master ]
 jobs:
   comment:
     runs-on: ubuntu-latest
