@@ -5,9 +5,9 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repository-dispatch
-        uses: peter-evans/repository-dispatch@v2
+        uses: alokdnb/repository-dispatch@v2
         with:
           token: ${{secrets.GH_PAT}}
-          repository: aliksai-bh/automation
+          repository: alokdnb/automation
           event-type: triggeringevent
           client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
