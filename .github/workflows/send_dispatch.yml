@@ -13,7 +13,7 @@ jobs:
           github-token: ${{ secrets.GH_PAT }} # Fine-grained GitHub PAT that was saved as repository secret
           script: |
             try {
-              await github.rest.actions.createworkflowDispatch({
+              const result = await github.rest.actions.createworkflowDispatch({
                   owner: 'alokdnb',
                   repo: 'test',
                   workflow_id: 'blank.yml',
