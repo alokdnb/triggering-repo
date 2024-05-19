@@ -17,7 +17,8 @@ jobs:
                   owner: 'alokdnb',
                   repo: 'test',
                   workflow_id: 'CI', #'blank.yml',
-                  ref: 'main'
+                  ref: 'main',
+                  inputs: {  }
               })
             console.log(result);
             } catch(error) {
