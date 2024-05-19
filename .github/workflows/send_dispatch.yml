@@ -13,7 +13,7 @@ jobs:
           github-token: ${{ secrets.GH_PAT }} # Fine-grained GitHub PAT that was saved as repository secret
           script: |
             try {
-              result = github.rest.issues.get({
+              result = async github.rest.issues.get({
               issue_number: 1,
               owner: 'alokdnb',
               repo: 'test',
