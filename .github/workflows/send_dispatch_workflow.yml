@@ -13,10 +13,11 @@ jobs:
           #github-token: ${{ secrets.GH_PAT }} # Fine-grained GitHub PAT that was saved as repository secret
           script: |
             try {
-              result = await github.rest.issues.get({
-              issue_number: 1,
-              owner: 'TapHere',
-              repo: 'coupa_chef_infra',
+              result = await github.rest.actions.createWorkflowDispatch({
+                owner: 'alokdnb',
+                repo: 'test',
+                workflow_id: 'blank.yml',
+                ref: 'master',
             })
             console.log(result);
             } catch(error) {
