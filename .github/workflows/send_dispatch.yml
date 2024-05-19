@@ -16,7 +16,7 @@ jobs:
               const result = await github.rest.actions.createworkflowDispatch({
                   owner: 'alokdnb',
                   repo: 'test',
-                  workflow_id: 'blank.yml',
+                  workflow_id: 'CI', #'blank.yml',
                   ref: 'main'
               })
             console.log(result);
