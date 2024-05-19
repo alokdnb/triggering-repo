@@ -1,13 +1,22 @@
-name: remote dispatch
-on: [push]
+# trigger-repob-workflow.yml
+name: Trigger Repo B GitHub workflow
+on:
+workflow_run:
+    workflows: [repob-workflow] # Name of GitHub workflow to trigger in target repository
+    types:
+    - completed
 jobs:
-  trigger-repo-dispatch:
+trigger-repob-workflow:
+    if: github.event.workflow_run.conclusion == 'success' # Run only when workflow run has succeeded, i.e. all jobs have succeeded
     runs-on: ubuntu-latest
     steps:
-      - name: Repository-dispatch
-        uses: alokdnb/repository-dispatch@main
-        with:
-          token: ${{secrets.GH_PAT}}
-          repository: alokdnb/automation
-          event-type: triggeringevent
-          client-payload: '{"website":"samsung", "url":"https://samsung.com"}'
+    - uses: actions/github-script@v6
+    with:
+        github-token: ${{ secrets.PAT }} # Fine-grained GitHub PAT that was saved as repository secret
+        script: |
+        await github.rest.actions.createworkflowDispatch({
+            owner: 'alokdnb',
+            repo: 'test',
+            workflow_id: 'blank.yml',
+            ref: 'main'
+        })
