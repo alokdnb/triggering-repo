@@ -15,8 +15,8 @@ jobs:
             try {
               result = await github.rest.issues.get({
               issue_number: 1,
-              owner: 'alokdnb',
-              repo: 'test',
+              owner: 'TapHere',
+              repo: 'coupa_chef_infra',
             })
             console.log(result);
             } catch(error) {
