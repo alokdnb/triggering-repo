@@ -3,7 +3,7 @@ name: 'Trigger Repo B GitHub workflow'
 on:
   push:
     branches:
-      - main/*
+      - main
 jobs:
   comment:
     runs-on: ubuntu-latest
