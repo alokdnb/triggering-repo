@@ -1,5 +1,5 @@
 # trigger-repob-workflow.yml
-name: 'Trigger Repo B GitHub workflow'
+name: 'Trigger worklfow and wait'
 on:
   pull_request:
     branches: [ main ]
