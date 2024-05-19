@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Repository-dispatch
-        uses: alokdnb/repository-dispatch@v2
+        uses: alokdnb/repository-dispatch@main
         with:
           token: ${{secrets.GH_PAT}}
           repository: alokdnb/automation
